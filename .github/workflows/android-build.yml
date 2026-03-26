@@ -33,6 +33,9 @@ jobs:
       - name: Prebuild Android
         run: npx expo prebuild --platform android
 
+      - name: Setup Android SDK Location
+        run: echo "sdk.dir=$ANDROID_HOME" > android/local.properties
+
       - name: Build Android App (Debug)
         run: |
           cd android
