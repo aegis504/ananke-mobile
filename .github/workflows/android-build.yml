@@ -39,10 +39,6 @@ jobs:
       - name: Setup Android SDK Location
         run: echo "sdk.dir=$ANDROID_HOME" > android/local.properties
 
-      - name: Downgrade Gradle (fix compatibility)
-        run: |
-          sed -i 's/distributionUrl=.*/distributionUrl=https\\:\/\/services.gradle.org\/distributions\/gradle-8.5-all.zip/g' android/gradle/wrapper/gradle-wrapper.properties
-
       - name: Build Android App (Debug)
         run: |
           cd android
