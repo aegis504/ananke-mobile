@@ -39,6 +39,10 @@ jobs:
       - name: Setup Android SDK Location
         run: echo "sdk.dir=$ANDROID_HOME" > android/local.properties
 
+      - name: Fix Missing Dependencies
+        run: |
+          sed -i '/dependencies {/a \    implementation "com.google.firebase:firebase-appindexing:20.0.0"' android/app/build.gradle
+
       - name: Build Android App (Debug)
         run: |
           cd android
