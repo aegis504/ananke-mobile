@@ -42,6 +42,10 @@ jobs:
       - name: Fix Missing Dependencies
         run: |
           sed -i '/dependencies {/a \    implementation "com.google.firebase:firebase-appindexing:20.0.0"' android/app/build.gradle
+          
+      - name: Resolve Dependency Conflicts
+        run: |
+          echo "allprojects { configurations.all { resolutionStrategy { force 'com.google.android.gms:play-services-ads:23.1.0'; force 'com.google.android.gms:play-services-ads-lite:23.1.0' } } }" >> android/build.gradle
 
       - name: Build Android App (Debug)
         run: |
