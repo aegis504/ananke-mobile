@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import {
   View, Text, TextInput, TouchableOpacity, StyleSheet,
   KeyboardAvoidingView, Platform, ScrollView, Alert, ActivityIndicator,
+  Image,
 } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { Colors, Spacing, BorderRadius, Shadows } from '../../theme';
@@ -43,7 +44,11 @@ export function SignupScreen({ onSwitchToLogin }: Props) {
       <KeyboardAvoidingView style={styles.flex} behavior={Platform.OS === 'ios' ? 'padding' : undefined}>
         <ScrollView contentContainerStyle={styles.container} keyboardShouldPersistTaps="handled">
           <View style={styles.header}>
-            <Text style={styles.logo}>⚡</Text>
+            <Image 
+              source={require('../../../assets/icon.png')} 
+              style={styles.logoImage} 
+              resizeMode="contain"
+            />
             <Text style={styles.appName}>Ananke</Text>
             <Text style={styles.tagline}>Productivity Enforcement Engine</Text>
           </View>
@@ -120,7 +125,7 @@ const styles = StyleSheet.create({
   flex: { flex: 1 },
   container: { flexGrow: 1, justifyContent: 'center', padding: Spacing.lg },
   header: { alignItems: 'center', marginBottom: Spacing.xl },
-  logo: { fontSize: 48, marginBottom: 8 },
+  logoImage: { width: 80, height: 80, marginBottom: 12 },
   appName: { fontSize: 32, fontWeight: '800', color: Colors.primary, letterSpacing: 1 },
   tagline: { fontSize: 13, color: Colors.textSecondary, marginTop: 4 },
   card: { backgroundColor: Colors.surface, borderRadius: BorderRadius.xl, padding: Spacing.lg, ...Shadows.md },

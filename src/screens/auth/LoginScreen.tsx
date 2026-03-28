@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import {
   View, Text, TextInput, TouchableOpacity, StyleSheet,
   KeyboardAvoidingView, Platform, ScrollView, Alert, ActivityIndicator,
+  Image,
 } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { Colors, Spacing, BorderRadius, Shadows } from '../../theme';
@@ -39,7 +40,11 @@ export function LoginScreen({ onSwitchToSignup }: Props) {
         <ScrollView contentContainerStyle={styles.container} keyboardShouldPersistTaps="handled">
           {/* Header */}
           <View style={styles.header}>
-            <Text style={styles.logo}>⚡</Text>
+            <Image 
+              source={require('../../../assets/icon.png')} 
+              style={styles.logoImage} 
+              resizeMode="contain"
+            />
             <Text style={styles.appName}>Ananke</Text>
             <Text style={styles.tagline}>Productivity Enforcement Engine</Text>
           </View>
@@ -112,7 +117,7 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     marginBottom: Spacing.xl,
   },
-  logo: { fontSize: 48, marginBottom: 8 },
+  logoImage: { width: 80, height: 80, marginBottom: 12 },
   appName: {
     fontSize: 32,
     fontWeight: '800',

@@ -1,11 +1,14 @@
-import React from 'react';
-import { View, ActivityIndicator, StyleSheet, Text } from 'react-native';
+import { View, ActivityIndicator, StyleSheet, Text, Image } from 'react-native';
 import { Colors } from '../theme';
 
 export function LoadingScreen({ message }: { message?: string }) {
   return (
     <View style={styles.container}>
-      <Text style={styles.logo}>⚡</Text>
+      <Image 
+        source={require('../../assets/icon.png')} 
+        style={styles.logoImage} 
+        resizeMode="contain"
+      />
       <Text style={styles.name}>Ananke</Text>
       <ActivityIndicator size="small" color={Colors.primary} style={styles.spinner} />
       {message && <Text style={styles.message}>{message}</Text>}
@@ -20,9 +23,10 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'center',
   },
-  logo: {
-    fontSize: 48,
-    marginBottom: 8,
+  logoImage: {
+    width: 80,
+    height: 80,
+    marginBottom: 16,
   },
   name: {
     fontSize: 28,

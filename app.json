@@ -10,7 +10,7 @@
     "splash": {
       "image": "./assets/splash.png",
       "resizeMode": "contain",
-      "backgroundColor": "#FBF7F0"
+      "backgroundColor": "#1a1a2e"
     },
     "assetBundlePatterns": ["**/*"],
     "ios": {
@@ -25,7 +25,7 @@
     "android": {
       "adaptiveIcon": {
         "foregroundImage": "./assets/adaptive-icon.png",
-        "backgroundColor": "#FBF7F0"
+        "backgroundColor": "#1a1a2e"
       },
       "package": "com.ananke.mobile",
       "permissions": ["RECEIVE_BOOT_COMPLETED", "VIBRATE"]
